@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
+/**
+ * @method ArticleFactory hasArticles(int $nb)
+ */
 class UserFactory extends Factory
 {
     /**
