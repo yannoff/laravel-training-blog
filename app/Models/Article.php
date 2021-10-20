@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
+/**
+ * @property $title
+ * @property $contents
+ * @property $slug
+ */
 class Article extends Model
 {
     use HasFactory;

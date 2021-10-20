@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Front\ArticleController;
+use App\Http\Controllers\Back\ArticleController as ArticleCrudController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('/blog', ArticleController::class)->except(['show']);
+Route::get('/blog/{article:slug}', [ArticleController::class, 'show'])->name('blog.details');
+
+Route::get('/topics/{topic:slug}', [ArticleController::class, 'filterByTopic']);
+Route::get('/authors/{user}', [ArticleController::class, 'filterByAuthor']);
+Route::get('/tags/{tag}', [ArticleController::class, 'filterByTag'])->name('by-tag');
+
+Route::resource('/admin/articles', ArticleCrudController::class);
