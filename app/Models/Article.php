@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
+/**
+ * @property $title
+ * @property $contents
+ * @property $slug
+ */
 class Article extends Model
 {
     use HasFactory;
@@ -15,6 +20,18 @@ class Article extends Model
 
     protected $table = 'articles';
     protected $primaryKey = 'id';
+    protected $guarded = [];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::saving([static::class, 'preSave']);
+    }
+
+    public static function preSave(Article $model)
+    {
+        $model->slug = Str::slug($model->title);
+    }
 
     /**
      * @return BelongsTo

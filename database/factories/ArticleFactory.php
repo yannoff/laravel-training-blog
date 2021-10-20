@@ -22,12 +22,12 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->sentence(12);
+        $title = $this->faker->sentence(6);
 
         return [
             'title' => $title,
             'slug' => Str::slug($title, '-', 'it'),
-            'contents' => $this->faker->paragraph(5),
+            'contents' => $this->faker->paragraph(25),
             'created_at' => $this->faker->dateTimeBetween('- 13 months'),
         ];
     }
