@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::resource('/blog', ArticleController::class)->except(['show']);
 Route::get('/blog/{article:slug}', [ArticleController::class, 'show']);
@@ -44,3 +47,5 @@ Route::get('/tags/{tag}', function (\App\Models\Tag $tag) {
 })->name('by-tag');
 
 Route::resource('/admin/articles', ArticleCrudController::class);
+
+require __DIR__.'/auth.php';
