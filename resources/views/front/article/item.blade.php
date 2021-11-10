@@ -11,9 +11,11 @@
     on {{ date_format($row->created_at, 'Y-m-d H:i') }}
     in <a href="{{ url('/topics', [$row->topic?->slug]) }}">{{ $row->topic?->label }}</a>
 </i>
-<p>
-{!! $row->contents !!}
-</p>
+<div class="blog-contents">
+@markdown
+    {!! $row->contents !!}
+@endmarkdown
+</div>
 <p>
     <b><i>Tags:</i></b>
     @foreach ($row->tags as $tag)
