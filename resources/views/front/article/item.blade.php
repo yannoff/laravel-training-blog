@@ -12,9 +12,9 @@
     in <a href="{{ url('/topics', [$row->topic?->slug]) }}">{{ $row->topic?->label }}</a>
 </i>
 <div class="blog-contents">
-@markdown
+<x-markdown flavor="github">
     {!! $row->contents !!}
-@endmarkdown
+</x-markdown>
 </div>
 <p>
     <b><i>Tags:</i></b>

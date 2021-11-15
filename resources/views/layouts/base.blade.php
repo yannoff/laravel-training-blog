@@ -23,10 +23,12 @@
             pre code { border: none !important; }
             blockquote { padding-left: 1em; border-left: solid 2px #4d4748; color: #666666; }
         </style>
+        @bukStyles()
     </head>
     <body class="dark">
         <div class="container-xxl">
             @yield ('page')
         </div>
+        @bukScripts()
     </body>
 </html>
