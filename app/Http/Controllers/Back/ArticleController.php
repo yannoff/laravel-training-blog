@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\CrudController;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
-class ArticleController extends Controller
+class ArticleController extends CrudController
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected function getModelName(): string
+    {
+        return Article::class;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,16 +50,6 @@ class ArticleController extends Controller
         endswitch;
 
         return view('back.article.list', ['rows' => $list]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return View
-     */
-    public function create(): View
-    {
-        return view('back.article.edit');
     }
 
     /**

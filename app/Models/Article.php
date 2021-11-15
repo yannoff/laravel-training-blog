@@ -52,4 +52,16 @@ class Article extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function toDataRow()
+    {
+        return [
+            'slug' => $this->slug,
+            'title' => $this->title,
+            'created' => $this->created_at,
+            'updated' => $this->updated_at,
+            'author' => User::find($this->user_id)?->name,
+            'category' => Topic::find($this->topic_id)->label,
+        ];
+    }
 }

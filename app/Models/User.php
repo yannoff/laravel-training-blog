@@ -14,7 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
 /**
  * @method UserFactory static factory(int $nb)
  */
-class User extends Authenticatable
+class User extends Authenticatable implements DataTable
 {
     use HasApiTokens, HasFactory, Notifiable;
     use SoftDeletes;
@@ -55,5 +55,15 @@ class User extends Authenticatable
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+
+    public function toDataRow()
+    {
+        return [
+            'name' => $this->name,
+            'email' => $this->email,
+            'created' => $this->created_at,
+            'verified' => $this->email_verified_at !== null ? 'yes' : 'no',
+        ];
     }
 }

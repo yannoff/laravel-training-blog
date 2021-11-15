@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Front\ArticleController;
 use App\Http\Controllers\Back\ArticleController as ArticleCrudController;
+use App\Http\Controllers\Back\TagController as TagCrudController;
+use App\Http\Controllers\Back\TopicController as TopicCrudController;
+use App\Http\Controllers\Back\UserController as UserCrudController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +31,6 @@ Route::get('/authors/{user}', [ArticleController::class, 'filterByAuthor']);
 Route::get('/tags/{tag}', [ArticleController::class, 'filterByTag'])->name('by-tag');
 
 Route::resource('/admin/articles', ArticleCrudController::class);
+Route::resource('/admin/tags', TagCrudController::class);
+Route::resource('/admin/topics', TopicCrudController::class);
+Route::resource('/admin/users', UserCrudController::class);
