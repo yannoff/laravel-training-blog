@@ -83,7 +83,7 @@ class ArticleController extends Controller
     {
         $article = Article::create($request->only(['title', 'contents', 'topic_id', 'user_id']));
 
-        foreach ($request->tags as $tag) {
+        foreach ($request->tags ?? [] as $tag) {
             $article->tags()->attach($tag);
         }
 
