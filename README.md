@@ -8,7 +8,6 @@ Laravel training project: blog
 ## Installation
 
 ```
-cp .env.example.docker .env && \
 docker-compose up -d && \
 bin/bash offenbach install && \
 bin/bash ./artisan migrate:fresh --seed
