@@ -9,7 +9,7 @@ Laravel training project: blog
 
 ```
 docker-compose up -d && \
-bin/bash offenbach install && \
+bin/offenbach install && \
 bin/bash ./artisan migrate:fresh --seed
 ```
 
