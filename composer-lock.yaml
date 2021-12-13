@@ -6,7 +6,7 @@ _readme:
     - 'This file locks the dependencies of your project to a known state'
     - 'Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies'
     - 'This file is @generated automatically'
-content-hash: 18a7a1d98ef3cd571c0a6dff87d23023
+content-hash: 14512d87e0f72a836358b888317e6319
 packages:
     -
         name: asm89/stack-cors
@@ -3980,6 +3980,44 @@ packages:
             issues: 'https://github.com/webmozarts/assert/issues'
             source: 'https://github.com/webmozarts/assert/tree/1.10.0'
         time: '2021-03-09T10:59:23+00:00'
+    -
+        name: yannoff/lumiere-utils
+        version: 0.2.0
+        source:
+            type: git
+            url: 'https://github.com/yannoff/lumiere-utils.git'
+            reference: f1b7f80ab6d9e49fa7f44ce817898189ea15202d
+        dist:
+            type: zip
+            url: 'https://api.github.com/repos/yannoff/lumiere-utils/zipball/f1b7f80ab6d9e49fa7f44ce817898189ea15202d'
+            reference: f1b7f80ab6d9e49fa7f44ce817898189ea15202d
+            shasum: ''
+        require:
+            php: '>=7.0'
+        require-dev:
+            illuminate/database: '*'
+        type: library
+        autoload:
+            psr-4:
+                Yannoff\Lumiere\Utils\: src/
+                Yannoff\Lumiere\Database\: lib/Database/
+        notification-url: 'https://packagist.org/downloads/'
+        license:
+            - MIT
+        authors:
+            -
+                name: Yannoff
+                homepage: 'https://github.com/yannoff'
+        description: 'A set of utils & helpers for Laravel'
+        keywords:
+            - 'Laravel Framework'
+            - illuminate
+            - laravel
+            - lumen
+        support:
+            issues: 'https://github.com/yannoff/lumiere-utils/issues'
+            source: 'https://github.com/yannoff/lumiere-utils/tree/0.2.0'
+        time: '2021-12-11T17:16:18+00:00'
 packages-dev:
     -
         name: barryvdh/laravel-debugbar

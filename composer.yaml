@@ -17,6 +17,7 @@ require:
     laravel/framework: ^8.54
     laravel/sanctum: ^2.11
     laravel/tinker: ^2.5
+    yannoff/lumiere-utils: ^0.2.0
 require-dev:
     barryvdh/laravel-debugbar: ^3.6
     facade/ignition: ^2.5

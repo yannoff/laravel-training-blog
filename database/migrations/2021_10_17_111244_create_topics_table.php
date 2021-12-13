@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use App\Database\Schema\Utils;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Yannoff\Lumiere\Utils\Database\BluePrintUtils as Utils;
 
 class CreateTopicsTable extends Migration
 {
